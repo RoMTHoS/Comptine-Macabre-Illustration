@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LeftSideProvider from "./contexts/leftSideContext";
 import RightSideProvider from "./contexts/rightSideContext";
+// eslint-disable-next-line no-unused-vars
 import firebase from "./FirebaseConfig";
 
 function App() {
