@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Kings&family=Shalimar&display=swap");
+
+$font-1: "Kings", cursive;
+$font-2: "Shalimar", cursive;
+
+$white: #ddd;
+$black: #333;
+$grey: #888;
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  background: $grey;
+  background-size: auto;
+  color: $white;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-areas:
+    "a a a a a a a a a a a a"
+    "a a a a a a a a a a a a"
+    "b b c c c c c c c c d d"
+    "b b c c c c c c c c d d"
+    "b b c c c c c c c c d d"
+    "b b c c c c c c c c d d"
+    "b b c c c c c c c c d d"
+    "b b c c c c c c c c d d"
+    "b b c c c c c c c c d d"
+    "b b c c c c c c c c d d"
+    "b b c c c c c c c c d d"
+    "e e e e e e e e e e e e";
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  cursor: pointer;
+}
+
+a:visited {
+  color: $white;
+}

@@ -1,0 +1,33 @@
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-area: c;
+  flex-direction: column;
+  font-family: $font-2;
+
+  .presentation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    img {
+      display: flex;
+      justify-content: center;
+      max-width: 300px;
+    }
+
+    p {
+      margin: 50px;
+      display: flex;
+      align-items: center;
+      max-width: 200px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}

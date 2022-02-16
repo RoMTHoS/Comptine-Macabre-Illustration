@@ -1,0 +1,7 @@
+.footer {
+  @include verticalCenter;
+  background-color: $black;
+  font-family: $font-1;
+  grid-area: e;
+  margin: 10px;
+}

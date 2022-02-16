@@ -1,0 +1,9 @@
+.leftside {
+  @include verticalCenter;
+  background-color: $black;
+  font-family: $font-1;
+  grid-area: b;
+  margin: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}

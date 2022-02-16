@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Kings&family=Shalimar&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  background: #888;
+  background-size: auto;
+  color: #ddd;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-areas: "a a a a a a a a a a a a" "a a a a a a a a a a a a" "b b c c c c c c c c d d" "b b c c c c c c c c d d" "b b c c c c c c c c d d" "b b c c c c c c c c d d" "b b c c c c c c c c d d" "b b c c c c c c c c d d" "b b c c c c c c c c d d" "b b c c c c c c c c d d" "b b c c c c c c c c d d" "e e e e e e e e e e e e";
+}
+
+a {
+  text-decoration: none;
+  color: #ddd;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #ddd;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  font-family: "Kings", cursive;
+  grid-area: a;
+  margin: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  font-family: "Kings", cursive;
+  grid-area: e;
+  margin: 10px;
+}
+
+.leftside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  font-family: "Kings", cursive;
+  grid-area: b;
+  margin: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.rightside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  float: right;
+  background-color: #333;
+  font-family: "Kings", cursive;
+  grid-area: d;
+  margin: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-area: c;
+  flex-direction: column;
+  font-family: "Shalimar", cursive;
+}
+.contact .presentation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contact .presentation img {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+}
+.contact .presentation p {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.accueil {
+  grid-area: c;
+  background-image: url("../media/0.jpg");
+  margin: 10px;
+}
+
+.oeuvres {
+  grid-area: c;
+  background-color: black;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  max-width: 80%;
+}
+.images img {
+  max-width: 650px;
+  margin: 30px;
+}
+
+/*# sourceMappingURL=index.css.map */

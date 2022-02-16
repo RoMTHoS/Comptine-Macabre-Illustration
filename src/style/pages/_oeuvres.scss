@@ -1,0 +1,17 @@
+.oeuvres {
+  grid-area: c;
+  background-color: black;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  max-width: 80%;
+
+  img {
+    max-width: 650px;
+    margin: 30px;
+  }
+}

@@ -1,0 +1,11 @@
+.rightside {
+  @include verticalCenter;
+  position: relative;
+  float: right;
+  background-color: $black;
+  font-family: $font-1;
+  grid-area: d;
+  margin: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
