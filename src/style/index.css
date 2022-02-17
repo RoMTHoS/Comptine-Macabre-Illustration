@@ -123,4 +123,11 @@ a:visited {
   margin: 30px;
 }
 
+.admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 /*# sourceMappingURL=index.css.map */

@@ -4,6 +4,7 @@ import LeftSide from "./components/LeftSide";
 import NotFound from "./components/NotFound";
 import RightSide from "./components/RightSide";
 import Accueil from "./pages/Accueil";
+import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
 import Oeuvres from "./pages/Oeuvres";
 
@@ -16,6 +17,7 @@ const Router = () => {
         <Route path="/" to element={<Accueil />} />
         <Route path="contact" to element={<Contact />} />
         <Route path="oeuvres" to element={<Oeuvres />} />
+        <Route path="admin" to element={<Admin />} />
         <Route path="*" to element={<NotFound />} />
       </Routes>
     </BrowserRouter>
