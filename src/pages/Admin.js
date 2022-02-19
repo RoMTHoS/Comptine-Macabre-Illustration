@@ -24,6 +24,7 @@ const Admin = ({ existingAdmin }) => {
       });
   }, [admin]);
 
+  //Function pour récupérer les données du Firestore
   async function fetchStories() {
     let fetchedStories = [];
 
@@ -91,7 +92,7 @@ const Admin = ({ existingAdmin }) => {
       alert(error.message);
     }
   }
-
+  //Function pour modifier les histoires
   async function handleUpdateStory(newStory, storyId) {
     try {
       await FirebaseFirestore.updateDocument("stories", storyId, newStory);
@@ -105,7 +106,7 @@ const Admin = ({ existingAdmin }) => {
       throw error;
     }
   }
-
+  //Function pour supprimer les histoires
   async function handleDeleteStory(storyId) {
     const deleteConfirmation = window.confirm(
       "Are you sure you want to delete this Story ?"
@@ -127,7 +128,7 @@ const Admin = ({ existingAdmin }) => {
       }
     }
   }
-
+  //Function pour éditer les histoires
   function handleEditStoryClick(storyId) {
     const selectedStory = stories.find((story) => {
       return story.id === storyId;

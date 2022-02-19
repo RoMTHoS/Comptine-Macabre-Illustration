@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Images from "../components/Images";
 import { LeftSideContext } from "../contexts/leftSideContext";
 import { RightSideContext } from "../contexts/rightSideContext";
+import HorizontalScroll from "react-scroll-horizontal";
 
 const Oeuvres = () => {
   const { setRightSide } = useContext(RightSideContext);
@@ -9,9 +10,12 @@ const Oeuvres = () => {
 
   setRightSide("Contact");
   setLeftSide("Accueil");
+
   return (
     <main className="oeuvres">
-      <Images />
+      <HorizontalScroll>
+        <Images />
+      </HorizontalScroll>
     </main>
   );
 };

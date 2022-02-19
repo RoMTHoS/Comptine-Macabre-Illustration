@@ -4,17 +4,25 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LeftSideProvider from "./contexts/leftSideContext";
 import RightSideProvider from "./contexts/rightSideContext";
-// eslint-disable-next-line no-unused-vars
-import firebase from "./FirebaseConfig";
+import { IllustrationStoryContext } from "./contexts/illustrationStoryContext";
+import IllustrationStory from "./components/IllustrationStory";
+import { useContext } from "react";
 
 function App() {
+  const { illustrationStory } = useContext(IllustrationStoryContext);
   return (
     <>
       <LeftSideProvider>
         <RightSideProvider>
-          <Header />
-          <Router />
-          <Footer />
+          {illustrationStory ? (
+            <IllustrationStory />
+          ) : (
+            <>
+              <Header />
+              <Router />
+              <Footer />
+            </>
+          )}
         </RightSideProvider>
       </LeftSideProvider>
     </>
