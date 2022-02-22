@@ -2,6 +2,8 @@
   @include verticalCenter;
   background-color: $black;
   font-family: $font-1;
+  letter-spacing: 5px;
+  font-size: 2em;
   grid-area: a;
   margin: 10px;
 }

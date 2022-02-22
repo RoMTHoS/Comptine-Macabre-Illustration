@@ -19,6 +19,7 @@ const IllustrationStory = () => {
 
   useEffect(() => {
     setShowIS(illustrationStoryContent[index]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   function add() {

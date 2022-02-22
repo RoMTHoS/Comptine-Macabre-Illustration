@@ -30,6 +30,8 @@ a:visited {
   align-items: center;
   background-color: #333;
   font-family: "Kings", cursive;
+  letter-spacing: 5px;
+  font-size: 2em;
   grid-area: a;
   margin: 10px;
 }
