@@ -6,4 +6,12 @@
   font-size: 2em;
   grid-area: a;
   margin: 10px;
+
+  @include media-max(1000px) {
+    font-size: 1em;
+  }
+
+  @include media-max(600px) {
+    font-size: 0.5em;
+  }
 }

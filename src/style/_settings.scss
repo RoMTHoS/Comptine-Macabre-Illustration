@@ -13,6 +13,14 @@ $grey: #888;
   align-items: center;
 }
 
+@mixin media-max($_max-width) {
+  @media screen and (max-width: $_max-width) {
+    & {
+      @content;
+    }
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -20,7 +28,6 @@ $grey: #888;
 
 #root {
   background: $grey;
-  background-size: auto;
   color: $white;
   display: grid;
   height: 100vh;

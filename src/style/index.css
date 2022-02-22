@@ -6,7 +6,6 @@
 
 #root {
   background: #888;
-  background-size: auto;
   color: #ddd;
   display: grid;
   height: 100vh;
@@ -35,6 +34,16 @@ a:visited {
   grid-area: a;
   margin: 10px;
 }
+@media screen and (max-width: 1000px) {
+  .header {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    font-size: 0.5em;
+  }
+}
 
 .footer {
   display: flex;
@@ -52,24 +61,44 @@ a:visited {
   align-items: center;
   background-color: #333;
   font-family: "Kings", cursive;
+  font-size: 3em;
   grid-area: b;
   margin: 10px;
   writing-mode: vertical-rl;
   text-orientation: upright;
+}
+@media screen and (max-width: 1000px) {
+  .leftside {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .leftside {
+    font-size: 1em;
+  }
 }
 
 .rightside {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  float: right;
   background-color: #333;
   font-family: "Kings", cursive;
+  font-size: 3em;
   grid-area: d;
   margin: 10px;
   writing-mode: vertical-rl;
   text-orientation: upright;
+}
+@media screen and (max-width: 1000px) {
+  .rightside {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rightside {
+    font-size: 1em;
+  }
 }
 
 .contact {
@@ -79,6 +108,7 @@ a:visited {
   grid-area: c;
   flex-direction: column;
   font-family: "Shalimar", cursive;
+  margin: 10px;
 }
 .contact .presentation {
   display: flex;
@@ -106,6 +136,7 @@ a:visited {
   grid-area: c;
   background-image: url("../media/0.jpg");
   margin: 10px;
+  min-width: 1000px;
 }
 
 .oeuvres {
@@ -115,6 +146,7 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 1000px;
 }
 
 .images {
@@ -131,6 +163,8 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Shalimar", cursive;
+  font-size: 2em;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
@@ -148,10 +182,10 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: black;
   overflow: hidden;
-  width: 70%;
-  height: 70%;
+  width: 55%;
+  height: 75%;
   margin: 20px;
 }
 
@@ -159,11 +193,39 @@ a:visited {
   position: relative;
 }
 
+.btn-last {
+  position: absolute;
+  left: 10px;
+}
+
+.btn-next {
+  position: absolute;
+  right: 10px;
+}
+
 .admin {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.illustration-story-page {
+  background-color: #888;
+}
+
+.illustration-story-content {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.text-content {
+  margin: 20px;
+}
+
+.text-content h2 div button {
+  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=index.css.map */

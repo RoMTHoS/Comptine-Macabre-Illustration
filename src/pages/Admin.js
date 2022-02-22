@@ -163,10 +163,10 @@ const Admin = ({ existingAdmin }) => {
           </div>
           <div>
             {stories && stories.length > 0 ? (
-              <div>
+              <div className="illustration-story-page">
                 {stories.map((story) => {
                   return (
-                    <div key={story.id}>
+                    <div key={story.id} className="illustration-story-content">
                       <div>
                         {story.imageUrl ? (
                           <img
@@ -176,14 +176,16 @@ const Admin = ({ existingAdmin }) => {
                           />
                         ) : null}
                       </div>
-                      <h2>{story.title}</h2>
-                      <div>{story.text}</div>
-                      <button
-                        type="button"
-                        onClick={() => handleEditStoryClick(story.id)}
-                      >
-                        Edit
-                      </button>
+                      <div className="text-content">
+                        <h2>{story.title}</h2>
+                        <div>{story.text}</div>
+                        <button
+                          type="button"
+                          onClick={() => handleEditStoryClick(story.id)}
+                        >
+                          Edit
+                        </button>
+                      </div>
                     </div>
                   );
                 })}

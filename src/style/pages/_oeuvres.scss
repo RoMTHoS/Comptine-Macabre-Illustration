@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 1000px;
 }
 
 .images {
@@ -20,6 +21,8 @@
 .illustration-story,
 .overlay {
   @include verticalCenter;
+  font-family: $font-2;
+  font-size: 2em;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
@@ -35,13 +38,23 @@
 
 .illustration {
   @include verticalCenter;
-  background-color: white;
+  background-color: black;
   overflow: hidden;
-  width: 70%;
-  height: 70%;
+  width: 55%;
+  height: 75%;
   margin: 20px;
 }
 
 .image img {
   position: relative;
+}
+
+.btn-last {
+  position: absolute;
+  left: 10px;
+}
+
+.btn-next {
+  position: absolute;
+  right: 10px;
 }

@@ -2,3 +2,21 @@
   @include verticalCenter;
   flex-direction: column;
 }
+
+.illustration-story-page {
+  background-color: $grey;
+}
+
+.illustration-story-content {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.text-content {
+  margin: 20px;
+}
+
+.text-content h2 div button {
+  margin-bottom: 50px;
+}
