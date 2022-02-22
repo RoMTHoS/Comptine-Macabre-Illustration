@@ -7,9 +7,12 @@ const Images = () => {
   const { illustrationStory, setIllustrationStory } = useContext(
     IllustrationStoryContext
   );
-  const { setIllustrationStoryContent, setImageUrl } = useContext(
-    IllustrationStoryContext
-  );
+  const {
+    illustrationStoryContent,
+    setIllustrationStoryContent,
+    setShowIS,
+    setIndex,
+  } = useContext(IllustrationStoryContext);
 
   async function fetchStories() {
     let fetchedStories = [];
@@ -47,8 +50,15 @@ const Images = () => {
   setIllustrationStoryContent(stories);
 
   function handleImageClick(event) {
-    setImageUrl(event.target.currentSrc);
     setIllustrationStory(!illustrationStory);
+    let x;
+    for (x in illustrationStoryContent) {
+      if (event.target.currentSrc === illustrationStoryContent[x].imageUrl) {
+        console.log(illustrationStoryContent[x]);
+        setIndex(x);
+        setShowIS(illustrationStoryContent[x]);
+      }
+    }
   }
 
   return (

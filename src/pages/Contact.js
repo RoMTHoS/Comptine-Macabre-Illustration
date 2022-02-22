@@ -1,7 +1,7 @@
-import { Field, Form, Formik } from "formik";
 import React, { useContext } from "react";
 import { LeftSideContext } from "../contexts/leftSideContext";
 import { RightSideContext } from "../contexts/rightSideContext";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const { setRightSide } = useContext(RightSideContext);
@@ -9,6 +9,27 @@ const Contact = () => {
 
   setRightSide("Accueil");
   setLeftSide("Oeuvres");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "comptines_macabre",
+        "template_macabre",
+        e.target,
+        "user_1mYh2zHSBH7fO9mC2HsZO"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <main className="contact">
       <div className="presentation">
@@ -24,15 +45,13 @@ const Contact = () => {
           culpa qui officia deserunt mollit anim id est laborum."
         </p>
       </div>
-      <Formik initialValues={{ name: "", email: "", object: "", text: "" }}>
-        <Form>
-          <Field name="name" type="text" placeholder="Nom" />
-          <Field name="email" type="email" placeholder="Email" />
-          <Field name="object" type="text" placeholder="Objet" />
-          <Field name="text" type="text" placeholder="Texte" />
-          <button type="submit">Submit</button>
-        </Form>
-      </Formik>
+      <form onSubmit={sendEmail}>
+        <input name="name" type="text" placeholder="Nom" />
+        <input name="email" type="email" placeholder="Email" />
+        <input name="object" type="text" placeholder="Objet" />
+        <input name="message" type="text" placeholder="Message" />
+        <button type="submit">Submit</button>
+      </form>
     </main>
   );
 };

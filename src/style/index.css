@@ -126,6 +126,10 @@ a:visited {
 
 .illustration-story,
 .overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -135,7 +139,22 @@ a:visited {
 }
 
 .overlay {
-  background: rgba(49, 49, 49, 0.9);
+  background: rgba(49, 49, 49, 0.95);
+}
+
+.illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
+  width: 70%;
+  height: 70%;
+  margin: 20px;
+}
+
+.image img {
+  position: relative;
 }
 
 .admin {

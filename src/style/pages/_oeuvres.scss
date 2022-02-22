@@ -19,6 +19,8 @@
 
 .illustration-story,
 .overlay {
+  @include verticalCenter;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -28,5 +30,18 @@
 }
 
 .overlay {
-  background: rgba(49, 49, 49, 0.9);
+  background: rgba(49, 49, 49, 0.95);
+}
+
+.illustration {
+  @include verticalCenter;
+  background-color: white;
+  overflow: hidden;
+  width: 70%;
+  height: 70%;
+  margin: 20px;
+}
+
+.image img {
+  position: relative;
 }

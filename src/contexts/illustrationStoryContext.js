@@ -5,7 +5,8 @@ export const IllustrationStoryContext = createContext();
 function IllustrationStoryProvider({ children }) {
   const [illustrationStory, setIllustrationStory] = useState(false);
   const [illustrationStoryContent, setIllustrationStoryContent] = useState([]);
-  const [imageUrl, setImageUrl] = useState("");
+  const [showIS, setShowIS] = useState({});
+  const [index, setIndex] = useState(0);
 
   return (
     <IllustrationStoryContext.Provider
@@ -14,8 +15,10 @@ function IllustrationStoryProvider({ children }) {
         setIllustrationStory,
         illustrationStoryContent,
         setIllustrationStoryContent,
-        imageUrl,
-        setImageUrl,
+        showIS,
+        setShowIS,
+        index,
+        setIndex,
       }}
     >
       {children}

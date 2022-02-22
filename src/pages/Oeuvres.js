@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Images from "../components/Images";
+import ImagesGallery from "../components/ImagesGallery";
 import { LeftSideContext } from "../contexts/leftSideContext";
 import { RightSideContext } from "../contexts/rightSideContext";
 import HorizontalScroll from "react-scroll-horizontal";
@@ -14,7 +14,7 @@ const Oeuvres = () => {
   return (
     <main className="oeuvres">
       <HorizontalScroll>
-        <Images />
+        <ImagesGallery />
       </HorizontalScroll>
     </main>
   );
