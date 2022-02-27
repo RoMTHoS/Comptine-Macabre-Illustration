@@ -1,6 +1,10 @@
 .accueil {
   grid-area: c;
   background-image: url("../media/0.jpg");
+  background-size: 25%;
   margin: 10px;
-  min-width: 1000px;
+
+  @include media-max(1000px) {
+    background-size: 50%;
+  }
 }

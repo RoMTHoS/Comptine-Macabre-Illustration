@@ -1,11 +1,20 @@
 .oeuvres {
   grid-area: c;
   background-color: rgb(0, 0, 0);
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 1000px;
+  @include verticalCenter;
+
+  @include media-max(750px) {
+    .images {
+      flex-direction: column;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      img {
+        width: 50vw;
+        height: fit-content;
+        margin: 0px 30px 0px 30px;
+      }
+    }
+  }
 }
 
 .images {
@@ -22,7 +31,7 @@
 .overlay {
   @include verticalCenter;
   font-family: $font-2;
-  font-size: 2em;
+  font-size: 1.35em;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
@@ -30,19 +39,24 @@
   left: 0;
   right: 0;
   bottom: 0;
+
+  h2 {
+    margin-top: 10px;
+  }
 }
 
 .overlay {
-  background: rgba(49, 49, 49, 0.95);
+  background: black;
 }
 
 .illustration {
   @include verticalCenter;
   background-color: black;
+  min-height: 350px;
   overflow: hidden;
+  margin: 20px;
   width: 55%;
   height: 75%;
-  margin: 20px;
 }
 
 .image img {
@@ -52,9 +66,59 @@
 .btn-last {
   position: absolute;
   left: 10px;
+  top: 50%;
 }
 
 .btn-next {
   position: absolute;
   right: 10px;
+  top: 50%;
+}
+
+.btn-close {
+  position: absolute;
+  right: 10px;
+  top: 80px;
+}
+
+.btn {
+  font-size: 0.75em;
+  width: 100%;
+}
+
+.illustration-story {
+  @include media-max(1300px) {
+    font-size: 1.25em;
+  }
+
+  @include media-max(1000px) {
+    font-size: 1em;
+    .overlay .illustration {
+      width: 100%;
+    }
+
+    .btn-last,
+    .btn-next,
+    .btn-close {
+      top: 0;
+      right: 0;
+      left: 0;
+      position: relative;
+    }
+    .btn {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  @include media-max(500px) {
+    font-size: 0.75em;
+    .overlay {
+      margin-top: 0px;
+      .illustration {
+        height: 50%;
+      }
+    }
+  }
 }

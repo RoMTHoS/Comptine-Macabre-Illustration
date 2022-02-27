@@ -1,8 +1,11 @@
 import { Field, Form, Formik } from "formik";
 import FirebaseAuthService from "../FirebaseAuthService";
 import AddStory from "../components/AddStory";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FirebaseFirestore from "../FirebaseFirestore";
+import { Link } from "react-router-dom";
+import { RightSideContext } from "../contexts/rightSideContext";
+import { LeftSideContext } from "../contexts/leftSideContext";
 
 const Admin = ({ existingAdmin }) => {
   const [admin, setAdmin] = useState(null);
@@ -12,6 +15,13 @@ const Admin = ({ existingAdmin }) => {
   const [currentStory, setCurrentStory] = useState(null);
 
   const [stories, setStories] = useState([]);
+
+  const { setRightSide } = useContext(RightSideContext);
+
+  const { setLeftSide } = useContext(LeftSideContext);
+
+  setRightSide("ADMIN AREA");
+  setLeftSide("ADMIN AREA");
 
   useEffect(() => {
     fetchStories()
@@ -136,7 +146,7 @@ const Admin = ({ existingAdmin }) => {
 
     if (selectedStory) {
       setCurrentStory(selectedStory);
-      window.scrollTo(0, document.body.scrollHeight);
+      window.scrollTo(0, 0);
     }
   }
 
@@ -148,10 +158,13 @@ const Admin = ({ existingAdmin }) => {
     <div className="admin">
       {existingAdmin ? (
         <div>
-          <h3>Welcome, {existingAdmin.email}</h3>
-          <button type="button" onClick={handleLogout}>
-            Logout
-          </button>
+          <div className="top-barre">
+            <button type="button" onClick={handleLogout}>
+              Deconnexion
+            </button>
+            <h3>Bienvenue, {existingAdmin.email}</h3>
+            <Link to="/">Acceuil</Link>
+          </div>
           <div className="add-container">
             <AddStory
               existingStory={currentStory}
@@ -167,24 +180,26 @@ const Admin = ({ existingAdmin }) => {
                 {stories.map((story) => {
                   return (
                     <div key={story.id} className="illustration-story-content">
-                      <div>
-                        {story.imageUrl ? (
-                          <img
-                            src={story.imageUrl}
-                            alt={story.name}
-                            className="image"
-                          />
-                        ) : null}
-                      </div>
+                      {story.imageUrl ? (
+                        <img
+                          src={story.imageUrl}
+                          alt={story.name}
+                          className="image"
+                        />
+                      ) : null}
                       <div className="text-content">
-                        <h2>{story.title}</h2>
+                        <div>
+                          <h2>{story.title}</h2>
+                        </div>
                         <div>{story.text}</div>
-                        <button
-                          type="button"
-                          onClick={() => handleEditStoryClick(story.id)}
-                        >
-                          Edit
-                        </button>
+                        <div>
+                          <button
+                            type="button"
+                            onClick={() => handleEditStoryClick(story.id)}
+                          >
+                            Modifier
+                          </button>
+                        </div>
                       </div>
                     </div>
                   );
@@ -194,33 +209,35 @@ const Admin = ({ existingAdmin }) => {
           </div>
         </div>
       ) : (
-        <Formik initialValues={{ email: "", password: "" }}>
-          <Form onSubmit={handleSubmit}>
-            <label htmlFor="email">
-              Email :
-              <Field
-                required
-                name="email"
-                type="email"
-                placeholder="Email"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </label>
-            <label htmlFor="password">
-              Password :
-              <Field
-                name="password"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </label>
-
-            <button type="submit">Login</button>
-          </Form>
-        </Formik>
+        <>
+          <Link to="/">Acceuil</Link>
+          <Formik initialValues={{ email: "", password: "" }}>
+            <Form onSubmit={handleSubmit}>
+              <label htmlFor="email">
+                Email :
+                <Field
+                  required
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </label>
+              <label htmlFor="password">
+                Password :
+                <Field
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </label>
+              <button type="submit">Login</button>
+            </Form>
+          </Formik>
+        </>
       )}
     </div>
   );

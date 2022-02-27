@@ -86,7 +86,7 @@ function AddImage({
             onClick={handleCancelImageClick}
             className="primary-button"
           >
-            Cancel Image
+            Supprimer l'image
           </button>
         </div>
       ) : null}

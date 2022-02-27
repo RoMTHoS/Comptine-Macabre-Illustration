@@ -63,59 +63,63 @@ const AddStory = ({
   }
 
   return (
-    <form onSubmit={handleIllustrationStorySubmit}>
-      {existingStory ? (
-        <h2>Update the Illustration Story</h2>
-      ) : (
-        <h2>Add a new Illustration Story</h2>
-      )}
-      <div>
-        <div className="image-box">
-          Story Illustration
-          <AddImage
-            basePath="stories"
-            existingImageUrl={imageUrl}
-            handleUploadFinish={(downloadUrl) => setImageUrl(downloadUrl)}
-            handleUploadCancel={() => setImageUrl("")}
-          ></AddImage>
-        </div>
-        <label>
-          Title :
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </label>
-        <label>
-          Story :
-          <textarea
-            type="text"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          ></textarea>
-        </label>
-      </div>
-      <div>
-        <button type="submit">
-          {" "}
-          {existingStory ? "Update Story" : "Add Story"}{" "}
-        </button>
+    <div className="form-new-content">
+      <form onSubmit={handleIllustrationStorySubmit}>
         {existingStory ? (
-          <>
-            <button type="button" onClick={handleEditStoryCancel}>
-              Cancel
-            </button>
-            <button
-              type="button"
-              onClick={() => handleDeleteStory(existingStory.id)}
-            >
-              Delete
-            </button>
-          </>
-        ) : null}
-      </div>
-    </form>
+          <h2>Mettre à jour l'oeuvre</h2>
+        ) : (
+          <h2>Ajouter une nouvelle oeuvre</h2>
+        )}
+        <div className="box">
+          <div className="image-box">
+            Illustration
+            <AddImage
+              basePath="stories"
+              existingImageUrl={imageUrl}
+              handleUploadFinish={(downloadUrl) => setImageUrl(downloadUrl)}
+              handleUploadCancel={() => setImageUrl("")}
+            ></AddImage>
+          </div>
+          <div className="text-box">
+            <label>
+              Titre :
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </label>
+            <label>
+              Histoire :
+              <textarea
+                type="text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+              ></textarea>
+            </label>
+          </div>
+        </div>
+        <div className="btn-post">
+          <button type="submit">
+            {" "}
+            {existingStory ? "Mettre à jour" : "Ajouter"}{" "}
+          </button>
+          {existingStory ? (
+            <>
+              <button type="button" onClick={handleEditStoryCancel}>
+                Annuler
+              </button>
+              <button
+                type="button"
+                onClick={() => handleDeleteStory(existingStory.id)}
+              >
+                Supprimer
+              </button>
+            </>
+          ) : null}
+        </div>
+      </form>
+    </div>
   );
 };
 

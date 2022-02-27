@@ -1,20 +1,116 @@
 .admin {
   @include verticalCenter;
+  background-color: black;
   flex-direction: column;
+  grid-area: c;
+  font-family: $font-1;
+  font-size: 1.5em;
+
+  @include media-max(700px) {
+    font-size: 1em;
+  }
+}
+
+.form-new-content {
+  @include verticalCenter;
+  font-size: 2em;
+  border: $black dashed 10px;
+  margin-bottom: 20px;
+
+  h2 {
+    text-align: center;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    textarea {
+      width: 400px;
+    }
+  }
+
+  .btn-post {
+    @include verticalCenter;
+    margin: 20px;
+  }
+
+  @include media-max(1250px) {
+    font-size: 1.5em;
+
+    h2 {
+      font-size: 1em;
+    }
+
+    .box {
+      flex-direction: column;
+    }
+  }
+
+  @include media-max(550px) {
+    .text-box textarea {
+      width: 200px;
+    }
+  }
+}
+
+.top-barre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  button {
+    margin-bottom: 10px;
+  }
+
+  a {
+    margin-top: 5px;
+  }
 }
 
 .illustration-story-page {
-  background-color: $grey;
+  background-color: black;
 }
 
 .illustration-story-content {
   display: flex;
   flex-direction: row;
-  margin: 20px;
+  text-align: center;
+  align-items: center;
+
+  img {
+    width: 50%;
+    min-width: 300px;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  @include media-max(1250px) {
+    font-size: 1em;
+    flex-direction: column;
+  }
 }
 
 .text-content {
-  margin: 20px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .text-content h2 div button {

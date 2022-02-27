@@ -45,13 +45,34 @@ const Contact = () => {
           culpa qui officia deserunt mollit anim id est laborum."
         </p>
       </div>
-      <form onSubmit={sendEmail}>
-        <input name="name" type="text" placeholder="Nom" />
-        <input name="email" type="email" placeholder="Email" />
-        <input name="object" type="text" placeholder="Objet" />
-        <input name="message" type="text" placeholder="Message" />
-        <button type="submit">Submit</button>
-      </form>
+      <div className="contact-form">
+        <h2>Contact</h2>
+        <form onSubmit={sendEmail}>
+          <label>
+            Nom :<br />
+            <input name="name" type="text" placeholder="Nom" />
+          </label>
+          <label>
+            Email :<br />
+            <input name="email" type="email" placeholder="Email" />
+          </label>
+          <label>
+            Objet <br />
+            <input name="object" type="text" placeholder="Objet" />
+          </label>
+        </form>
+        <div className="message">
+          <label>
+            Message :<br />
+            <textarea
+              name="message"
+              type="text"
+              placeholder="Message"
+            ></textarea>
+          </label>
+          <button type="submit">Envoyer</button>
+        </div>
+      </div>
     </main>
   );
 };

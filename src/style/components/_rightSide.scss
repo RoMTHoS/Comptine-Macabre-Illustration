@@ -1,12 +1,13 @@
 .rightside {
   @include verticalCenter;
-  background-color: $black;
+  background-color: black;
   font-family: $font-1;
   font-size: 3em;
   grid-area: d;
-  margin: 10px;
+  margin-right: 30px;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  cursor: pointer;
 
   @include media-max(1000px) {
     font-size: 2em;

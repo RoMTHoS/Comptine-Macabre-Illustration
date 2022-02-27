@@ -24,26 +24,32 @@ $grey: #888;
 * {
   padding: 0;
   margin: 0;
+  background: black;
+  text-align: center;
+  font-family: $font-1;
+  color: white;
 }
 
 #root {
-  background: $grey;
-  color: $white;
-  display: grid;
   height: 100vh;
   width: 100vw;
+  background: black;
+  background-size: auto;
+  color: $white;
+  display: grid;
+  justify-content: space-between;
   grid-template-areas:
     "a a a a a a a a a a a a"
-    "a a a a a a a a a a a a"
-    "b b c c c c c c c c d d"
-    "b b c c c c c c c c d d"
-    "b b c c c c c c c c d d"
-    "b b c c c c c c c c d d"
-    "b b c c c c c c c c d d"
-    "b b c c c c c c c c d d"
-    "b b c c c c c c c c d d"
-    "b b c c c c c c c c d d"
-    "b b c c c c c c c c d d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
+    "b c c c c c c c c c c d"
     "e e e e e e e e e e e e";
 }
 
@@ -55,4 +61,20 @@ a {
 
 a:visited {
   color: $white;
+}
+
+button {
+  margin: 10px;
+  font-size: 0.75em;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 20;
+}
+
+button:hover {
+  background-color: $black;
+}
+
+Link {
+  margin: 10px;
 }

@@ -40,19 +40,21 @@ const IllustrationStory = () => {
   return (
     <div className="illustration-story">
       <div className="overlay">
-        <button className="btn-close" onClick={handleImageClick}>
-          CLOSE
-        </button>
-        <div className="story">{showIS.title}</div>
-        <button className="btn-last" onClick={ded}>
-          LAST
-        </button>
+        <h2 className="story">{showIS.title}</h2>
         <div className="illustration">
           <Image src={showIS.imageUrl} />
         </div>
-        <button className="btn-next" onClick={add}>
-          NEXT
-        </button>
+        <div className="btn">
+          <button className="btn-last" onClick={ded}>
+            PRÉCÉDENT
+          </button>
+          <button className="btn-close" onClick={handleImageClick}>
+            FERMER
+          </button>
+          <button className="btn-next" onClick={add}>
+            SUIVANT
+          </button>
+        </div>
         <div className="story">{showIS.text}</div>
       </div>
     </div>
