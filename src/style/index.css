@@ -10,7 +10,6 @@
 
 #root {
   height: 100vh;
-  width: 100vw;
   background: black;
   background-size: auto;
   color: #ddd;
@@ -245,10 +244,10 @@ Link {
 
 .oeuvres {
   grid-area: c;
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 @media screen and (max-width: 750px) {
   .oeuvres .images {
@@ -263,8 +262,13 @@ Link {
   }
 }
 
+.scroll-horizontal {
+  display: flex;
+}
+
 .images {
   display: flex;
+  background-color: black;
 }
 .images img {
   height: 92%;
@@ -451,6 +455,11 @@ Link {
 .top-barre a {
   margin-top: 5px;
 }
+@media screen and (max-width: 500px) {
+  .top-barre h3 {
+    display: none;
+  }
+}
 
 .illustration-story-page {
   background-color: black;
@@ -473,6 +482,17 @@ Link {
   .illustration-story-content {
     font-size: 1em;
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
+  .illustration-story-content {
+    font-size: 0.75em;
+  }
+  .illustration-story-content h2 {
+    margin-bottom: 20px;
+  }
+  .illustration-story-content img {
+    min-width: 150px;
   }
 }
 

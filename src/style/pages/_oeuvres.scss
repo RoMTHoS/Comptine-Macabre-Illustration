@@ -1,7 +1,7 @@
 .oeuvres {
   grid-area: c;
-  background-color: rgb(0, 0, 0);
   @include verticalCenter;
+  background-color: black;
 
   @include media-max(750px) {
     .images {
@@ -17,8 +17,13 @@
   }
 }
 
+.scroll-horizontal {
+  display: flex;
+}
+
 .images {
   display: flex;
+  background-color: black;
 
   img {
     height: 92%;

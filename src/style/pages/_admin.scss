@@ -78,6 +78,12 @@
   a {
     margin-top: 5px;
   }
+
+  @include media-max(500px) {
+    h3 {
+      display: none;
+    }
+  }
 }
 
 .illustration-story-page {
@@ -102,6 +108,17 @@
   @include media-max(1250px) {
     font-size: 1em;
     flex-direction: column;
+  }
+
+  @include media-max(500px) {
+    font-size: 0.75em;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+    img {
+      min-width: 150px;
+    }
   }
 }
 

@@ -61,6 +61,8 @@ const Images = () => {
     }
   }
 
+  console.log(stories);
+
   return (
     <>
       <div className="images">
@@ -72,7 +74,6 @@ const Images = () => {
                   onClick={handleImageClick}
                   src={story.imageUrl}
                   alt={story.name}
-                  className="image"
                 />
               ) : null}
             </div>
