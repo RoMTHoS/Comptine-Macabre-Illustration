@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { useGesture } from "react-use-gesture";
+import React, { useContext, useEffect, useState } from "react";
 import { IllustrationStoryContext } from "../contexts/illustrationStoryContext";
 import FirebaseFirestore from "../FirebaseFirestore";
 
