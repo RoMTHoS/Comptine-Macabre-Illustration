@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useState } from "react";
 import ImagesGallery from "../components/ImagesGallery";
 import { LeftSideContext } from "../contexts/leftSideContext";
 import { RightSideContext } from "../contexts/rightSideContext";
 import HorizontalScroll from "react-scroll-horizontal";
+import { useGesture } from "react-use-gesture";
 
 const Oeuvres = () => {
   const { setRightSide } = useContext(RightSideContext);
@@ -11,10 +12,34 @@ const Oeuvres = () => {
   setRightSide("Contact");
   setLeftSide("Accueil");
 
+  let oeuvre = useRef();
+  let [moove, setMoove] = useState({ x: 1 + "px" });
+
+  useGesture(
+    {
+      onDrag: ({ offset: [dx] }) => {
+        setMoove((moove) => ({ ...moove, x: dx * 50 + "px" }));
+        console.log(dx);
+      },
+    },
+    {
+      domTarget: oeuvre,
+      eventOptions: { passive: false },
+    }
+  );
+
   return (
     <main className="oeuvres">
       <HorizontalScroll>
-        <ImagesGallery />
+        <div
+          className="moove"
+          ref={oeuvre}
+          style={{
+            transform: `translate3d(${moove.x}, 0, 0)`,
+          }}
+        >
+          <ImagesGallery />
+        </div>
       </HorizontalScroll>
     </main>
   );

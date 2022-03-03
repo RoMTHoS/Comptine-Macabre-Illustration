@@ -16,14 +16,14 @@ const Images = () => {
   } = useContext(IllustrationStoryContext);
 
   //début
-
+  /*
   let oeuvre = useRef();
   let [moove, setMoove] = useState({ x: 1 + "px" });
 
   useGesture(
     {
       onDrag: ({ offset: [dx] }) => {
-        setMoove((moove) => ({ ...moove, x: dx * -100 + "px" }));
+        setMoove((moove) => ({ ...moove, x: dx * 50 + "px" }));
         console.log(dx);
       },
     },
@@ -32,10 +32,7 @@ const Images = () => {
       eventOptions: { passive: false },
     }
   );
-
-  console.log(moove.x);
-  console.log(oeuvre);
-
+*/
   //fin
 
   async function fetchStories() {
@@ -86,13 +83,7 @@ const Images = () => {
 
   return (
     <>
-      <div
-        className="images"
-        ref={oeuvre}
-        style={{
-          transform: `translate3d(${moove.x}, 0, 0)`,
-        }}
-      >
+      <div className="images">
         {stories.map((story) => {
           return (
             <div key={story.id}>

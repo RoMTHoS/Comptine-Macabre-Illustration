@@ -246,7 +246,6 @@ Link {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
 }
 @media screen and (max-width: 750px) {
   .oeuvres .images {
@@ -259,6 +258,10 @@ Link {
     height: fit-content;
     margin: 0px 30px 0px 30px;
   }
+}
+
+.moove {
+  display: flex;
 }
 
 .scroll-horizontal {

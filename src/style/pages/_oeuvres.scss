@@ -1,7 +1,6 @@
 .oeuvres {
   grid-area: c;
   @include verticalCenter;
-  background-color: red;
 
   @include media-max(750px) {
     .images {
@@ -15,6 +14,9 @@
       }
     }
   }
+}
+.moove {
+  display: flex;
 }
 
 .scroll-horizontal {
