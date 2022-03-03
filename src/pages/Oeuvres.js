@@ -13,7 +13,7 @@ const Oeuvres = () => {
 
   return (
     <main className="oeuvres">
-      <HorizontalScroll className="scroll-horizontal">
+      <HorizontalScroll>
         <ImagesGallery />
       </HorizontalScroll>
     </main>
