@@ -18,12 +18,12 @@ const Images = () => {
   //début
 
   let oeuvre = useRef();
-  let [moove, setMoove] = useState({ x: 0 + "px" });
+  let [moove, setMoove] = useState({ x: 1 + "px" });
 
   useGesture(
     {
       onDrag: ({ offset: [dx] }) => {
-        setMoove((moove) => ({ ...moove, x: dx * -10 + "px" }));
+        setMoove((moove) => ({ ...moove, x: dx * -100 + "px" }));
         console.log(dx);
       },
     },
