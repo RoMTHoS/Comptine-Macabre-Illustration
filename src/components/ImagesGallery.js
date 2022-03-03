@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { useGesture } from "react-use-gesture";
 import { IllustrationStoryContext } from "../contexts/illustrationStoryContext";
 import FirebaseFirestore from "../FirebaseFirestore";
 
@@ -13,6 +14,29 @@ const Images = () => {
     setShowIS,
     setIndex,
   } = useContext(IllustrationStoryContext);
+
+  //début
+
+  let oeuvre = useRef();
+  let [moove, setMoove] = useState({ x: 0 + "px" });
+
+  useGesture(
+    {
+      onDrag: ({ offset: [dx] }) => {
+        setMoove((moove) => ({ ...moove, x: dx * -10 + "px" }));
+        console.log(dx);
+      },
+    },
+    {
+      domTarget: oeuvre,
+      eventOptions: { passive: false },
+    }
+  );
+
+  console.log(moove.x);
+  console.log(oeuvre);
+
+  //fin
 
   async function fetchStories() {
     let fetchedStories = [];
@@ -62,7 +86,13 @@ const Images = () => {
 
   return (
     <>
-      <div className="images">
+      <div
+        className="images"
+        ref={oeuvre}
+        style={{
+          transform: `translate3d(${moove.x}, 0, 0)`,
+        }}
+      >
         {stories.map((story) => {
           return (
             <div key={story.id}>
