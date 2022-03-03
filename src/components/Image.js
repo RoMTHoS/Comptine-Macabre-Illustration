@@ -8,7 +8,6 @@ const Image = ({ src }) => {
     {
       onDrag: ({ offset: [dx, dy] }) => {
         setCrop((crop) => ({ ...crop, x: dx, y: dy }));
-        console.log("drag");
       },
 
       onPinch: ({ offset: [d] }) => {

@@ -54,14 +54,11 @@ const Images = () => {
     let x;
     for (x in illustrationStoryContent) {
       if (event.target.currentSrc === illustrationStoryContent[x].imageUrl) {
-        console.log(illustrationStoryContent[x]);
         setIndex(x);
         setShowIS(illustrationStoryContent[x]);
       }
     }
   }
-
-  console.log(stories);
 
   return (
     <>
@@ -71,6 +68,7 @@ const Images = () => {
             <div key={story.id}>
               {story.imageUrl ? (
                 <img
+                  draggable="false"
                   onClick={handleImageClick}
                   src={story.imageUrl}
                   alt={story.name}
