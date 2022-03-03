@@ -1,9 +1,8 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext } from "react";
 import ImagesGallery from "../components/ImagesGallery";
 import { LeftSideContext } from "../contexts/leftSideContext";
 import { RightSideContext } from "../contexts/rightSideContext";
 import HorizontalScroll from "react-scroll-horizontal";
-import { useGesture } from "react-use-gesture";
 
 const Oeuvres = () => {
   const { setRightSide } = useContext(RightSideContext);
