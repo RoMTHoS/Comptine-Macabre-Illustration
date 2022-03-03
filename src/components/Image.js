@@ -12,7 +12,6 @@ const Image = ({ src }) => {
 
       onPinch: ({ offset: [d] }) => {
         setCrop((crop) => ({ ...crop, scale: 1 + d / 1000 }));
-        console.log({ offset: [d] });
       },
     },
     {
