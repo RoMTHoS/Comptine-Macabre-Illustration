@@ -18,7 +18,7 @@ const Oeuvres = () => {
   useGesture(
     {
       onDrag: ({ offset: [dx] }) => {
-        setMoove((moove) => ({ ...moove, x: dx * 20 + "px" }));
+        setMoove((moove) => ({ ...moove, x: dx + "px" }));
         console.log(dx);
       },
     },
