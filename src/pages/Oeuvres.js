@@ -18,7 +18,7 @@ const Oeuvres = () => {
   useGesture(
     {
       onDrag: ({ offset: [dx] }) => {
-        setMoove((moove) => ({ ...moove, x: dx * 50 + "px" }));
+        setMoove((moove) => ({ ...moove, x: dx * 20 + "px" }));
         console.log(dx);
       },
     },
@@ -29,11 +29,10 @@ const Oeuvres = () => {
   );
 
   return (
-    <main className="oeuvres">
+    <main className="oeuvres" ref={oeuvre}>
       <HorizontalScroll>
         <div
           className="moove"
-          ref={oeuvre}
           style={{
             transform: `translate3d(${moove.x}, 0, 0)`,
           }}
