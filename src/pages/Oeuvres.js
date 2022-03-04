@@ -19,7 +19,7 @@ const Oeuvres = () => {
     {
       onDrag: ({ offset: [dx] }) => {
         if (dx < 0) {
-          setMoove((moove) => ({ ...moove, x: dx * 0.1 + "px" }));
+          setMoove((moove) => ({ ...moove, x: dx * 0.25 + "px" }));
           console.log(dx);
         } else if (dx >= 0) {
           setMoove((moove) => ({ ...moove, x: 1 + "px" }));
