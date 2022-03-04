@@ -19,7 +19,7 @@ const Oeuvres = () => {
     {
       onDrag: ({ offset: [dx] }) => {
         if (dx < 0) {
-          setMoove((moove) => ({ ...moove, x: dx * 5 + "px" }));
+          setMoove((moove) => ({ ...moove, x: dx * 10 + "px" }));
           console.log(dx);
         } else if (dx >= 0) {
           setMoove((moove) => ({ ...moove, x: 1 + "px" }));
@@ -33,6 +33,7 @@ const Oeuvres = () => {
       eventOptions: { passive: false },
     }
   );
+  //console.log(document.querySelector(".oeuvres").clientWidth);
 
   return (
     <main className="oeuvres" ref={oeuvre}>
