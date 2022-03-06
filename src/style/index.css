@@ -401,9 +401,30 @@ Link {
   font-family: "Kings", cursive;
   font-size: 1.5em;
 }
-@media screen and (max-width: 700px) {
+.admin * {
+  margin-bottom: 30px;
+}
+.admin form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.admin form input {
+  font-size: 0.75em;
+}
+.admin form label {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 720px) {
   .admin {
     font-size: 1em;
+  }
+}
+@media screen and (max-width: 320px) {
+  .admin form input {
+    width: 80%;
   }
 }
 
@@ -411,7 +432,7 @@ Link {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 1.5em;
   border: #333 dashed 10px;
   margin-bottom: 20px;
 }
@@ -453,8 +474,25 @@ Link {
   }
 }
 @media screen and (max-width: 550px) {
+  .form-new-content {
+    font-size: 1em;
+  }
   .form-new-content .text-box textarea {
     width: 200px;
+  }
+  .form-new-content .text-box input {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .form-new-content {
+    font-size: 1em;
+  }
+  .form-new-content .text-box textarea {
+    width: 100px;
+  }
+  .form-new-content .text-box input {
+    width: 100px;
   }
 }
 
@@ -469,7 +507,7 @@ Link {
 .top-barre a {
   margin-top: 5px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 530px) {
   .top-barre h3 {
     display: none;
   }
@@ -498,7 +536,7 @@ Link {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 530px) {
   .illustration-story-content {
     font-size: 0.75em;
   }

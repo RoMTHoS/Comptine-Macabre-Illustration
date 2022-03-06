@@ -6,14 +6,40 @@
   font-family: $font-1;
   font-size: 1.5em;
 
-  @include media-max(700px) {
+  * {
+    margin-bottom: 30px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      font-size: 0.75em;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @include media-max(720px) {
     font-size: 1em;
+  }
+
+  @include media-max(320px) {
+    form input {
+      width: 80%;
+    }
   }
 }
 
 .form-new-content {
   @include verticalCenter;
-  font-size: 2em;
+  font-size: 1.5em;
   border: $black dashed 10px;
   margin-bottom: 20px;
 
@@ -60,8 +86,28 @@
   }
 
   @include media-max(550px) {
-    .text-box textarea {
-      width: 200px;
+    font-size: 1em;
+    .text-box {
+      textarea {
+        width: 200px;
+      }
+
+      input {
+        width: 200px;
+      }
+    }
+  }
+
+  @include media-max(340px) {
+    font-size: 1em;
+    .text-box {
+      textarea {
+        width: 100px;
+      }
+
+      input {
+        width: 100px;
+      }
     }
   }
 }
@@ -79,7 +125,7 @@
     margin-top: 5px;
   }
 
-  @include media-max(500px) {
+  @include media-max(530px) {
     h3 {
       display: none;
     }
@@ -110,7 +156,7 @@
     flex-direction: column;
   }
 
-  @include media-max(500px) {
+  @include media-max(530px) {
     font-size: 0.75em;
 
     h2 {
