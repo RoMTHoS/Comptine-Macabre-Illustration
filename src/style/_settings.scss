@@ -29,11 +29,13 @@ $grey: #888;
   font-family: $font-1;
   color: white;
   text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: 200;
 }
 
 #root {
   height: 100vh;
-  //background: black;
+  background: black;
   background-size: auto;
   color: $white;
   display: grid;

@@ -7,10 +7,13 @@
   font-family: "Kings", cursive;
   color: white;
   text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: 200;
 }
 
 #root {
   height: 100vh;
+  background: black;
   background-size: auto;
   color: #ddd;
   display: grid;
@@ -142,7 +145,7 @@ Link {
 }
 .contact .presentation img {
   width: 25%;
-  height: fit-content;
+  height: auto;
 }
 .contact .presentation p {
   margin: 0px 50px 0px 50px;
@@ -160,6 +163,10 @@ Link {
 }
 .contact .contact-form form {
   display: flex;
+  flex-direction: column;
+}
+.contact .contact-form form .person-info {
+  display: flex;
   flex-direction: row;
 }
 .contact .contact-form form label {
@@ -171,6 +178,7 @@ Link {
 .contact .contact-form form input {
   margin: 0px 30px 0px 30px;
   width: 300px;
+  font-size: 0.75em;
 }
 .contact .contact-form .message {
   display: flex;
@@ -188,6 +196,7 @@ Link {
 .contact .contact-form .message textarea {
   margin-bottom: 10px;
   width: 1025px;
+  font-size: 0.75em;
 }
 @media screen and (max-width: 1310px) {
   .contact .contact-form form input {

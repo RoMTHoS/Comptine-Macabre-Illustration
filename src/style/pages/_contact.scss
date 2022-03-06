@@ -16,7 +16,7 @@
 
     img {
       width: 25%;
-      height: fit-content;
+      height: auto;
     }
 
     p {
@@ -37,7 +37,12 @@
 
     form {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+
+      .person-info {
+        display: flex;
+        flex-direction: row;
+      }
 
       label {
         display: flex;
@@ -49,6 +54,7 @@
       input {
         margin: 0px 30px 0px 30px;
         width: 300px;
+        font-size: 0.75em;
       }
     }
 
@@ -69,6 +75,7 @@
       textarea {
         margin-bottom: 10px;
         width: 1025px;
+        font-size: 0.75em;
       }
     }
   }

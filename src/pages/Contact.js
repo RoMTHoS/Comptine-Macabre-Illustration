@@ -28,6 +28,9 @@ const Contact = () => {
         }
       );
     e.target.reset();
+    alert(
+      "Votre message à bien été envoyé. Merci pour votre attention, exelente journée à vous !"
+    );
   };
 
   return (
@@ -48,30 +51,48 @@ const Contact = () => {
       <div className="contact-form">
         <h2>Contact</h2>
         <form onSubmit={sendEmail}>
-          <label>
-            Nom :<br />
-            <input name="name" type="text" placeholder="Nom" />
-          </label>
-          <label>
-            Email :<br />
-            <input name="email" type="email" placeholder="Email" />
-          </label>
-          <label>
-            Objet <br />
-            <input name="object" type="text" placeholder="Objet" />
-          </label>
+          <div className="person-info">
+            <label>
+              Nom :<br />
+              <input
+                name="name"
+                type="text"
+                placeholder="Nom"
+                required="required"
+              />
+            </label>
+            <label>
+              Email :<br />
+              <input
+                name="email"
+                type="email"
+                placeholder="Email"
+                required="required"
+              />
+            </label>
+            <label>
+              Objet <br />
+              <input
+                name="object"
+                type="text"
+                placeholder="Objet"
+                required="required"
+              />
+            </label>
+          </div>
+          <div className="message">
+            <label>
+              Message :<br />
+              <textarea
+                name="message"
+                type="text"
+                placeholder="Message"
+                required="required"
+              ></textarea>
+            </label>
+            <button type="submit">Envoyer</button>
+          </div>
         </form>
-        <div className="message">
-          <label>
-            Message :<br />
-            <textarea
-              name="message"
-              type="text"
-              placeholder="Message"
-            ></textarea>
-          </label>
-          <button type="submit">Envoyer</button>
-        </div>
       </div>
     </main>
   );
