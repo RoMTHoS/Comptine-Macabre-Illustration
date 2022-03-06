@@ -33,7 +33,6 @@ const Oeuvres = () => {
       eventOptions: { passive: false },
     }
   );
-  //console.log(document.querySelector(".oeuvres").clientWidth);
 
   return (
     <main className="oeuvres" ref={oeuvre}>

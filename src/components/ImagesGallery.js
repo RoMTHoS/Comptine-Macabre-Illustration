@@ -14,26 +14,6 @@ const Images = () => {
     setIndex,
   } = useContext(IllustrationStoryContext);
 
-  //début
-  /*
-  let oeuvre = useRef();
-  let [moove, setMoove] = useState({ x: 1 + "px" });
-
-  useGesture(
-    {
-      onDrag: ({ offset: [dx] }) => {
-        setMoove((moove) => ({ ...moove, x: dx * 50 + "px" }));
-        console.log(dx);
-      },
-    },
-    {
-      domTarget: oeuvre,
-      eventOptions: { passive: false },
-    }
-  );
-*/
-  //fin
-
   async function fetchStories() {
     let fetchedStories = [];
 

@@ -105,6 +105,10 @@
     .contact-form {
       form {
         flex-direction: column;
+
+        .person-info {
+          flex-direction: column;
+        }
       }
       .message textarea {
         width: 400px;
@@ -118,6 +122,10 @@
     .presentation {
       p {
         max-width: 250px;
+      }
+
+      img {
+        min-width: 200px;
       }
     }
 
