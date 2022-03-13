@@ -13,6 +13,8 @@
 
 #root {
   height: 100vh;
+  scrollbar-width: none;
+  overflow-x: hidden;
   background: black;
   background-size: auto;
   color: #ddd;
@@ -249,7 +251,7 @@ Link {
   grid-area: c;
   background-image: url("../media/0.jpg");
   background-size: 25%;
-  margin: 10px;
+  margin: 20px;
 }
 @media screen and (max-width: 1000px) {
   .accueil {
@@ -260,30 +262,25 @@ Link {
 .oeuvres {
   grid-area: c;
   display: flex;
-  justify-content: center;
   align-items: center;
+  overflow-x: scroll;
+  scrollbar-width: none;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
   .oeuvres .images {
+    height: 85vh;
     flex-direction: column;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .oeuvres .images img {
-    width: 50vw;
-    height: fit-content;
-    margin: 0px 30px 0px 30px;
+    width: 40vw;
+    height: auto;
   }
 }
 
 .moove {
   display: flex;
-  background-color: red;
-}
-
-.scroll-horizontal {
-  display: flex;
-  background-color: black;
 }
 
 .images {

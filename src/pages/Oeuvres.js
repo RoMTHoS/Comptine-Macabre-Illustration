@@ -1,9 +1,7 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 import ImagesGallery from "../components/ImagesGallery";
 import { LeftSideContext } from "../contexts/leftSideContext";
 import { RightSideContext } from "../contexts/rightSideContext";
-import HorizontalScroll from "react-scroll-horizontal";
-import { useGesture } from "react-use-gesture";
 
 const Oeuvres = () => {
   const { setRightSide } = useContext(RightSideContext);
@@ -13,39 +11,24 @@ const Oeuvres = () => {
   setLeftSide("Accueil");
 
   let oeuvre = useRef();
-  let [moove, setMoove] = useState({ x: 1 + "px" });
+  let mooveX = 0;
 
-  useGesture(
-    {
-      onDrag: ({ offset: [dx] }) => {
-        if (dx < 0) {
-          setMoove((moove) => ({ ...moove, x: dx * 10 + "px" }));
-          console.log(dx);
-        } else if (dx >= 0) {
-          setMoove((moove) => ({ ...moove, x: 1 + "px" }));
-          dx = 0;
-          console.log(dx);
-        }
-      },
-    },
-    {
-      domTarget: oeuvre,
-      eventOptions: { passive: false },
+  const ScrollHorizontal = (e) => {
+    if (mooveX < 0) {
+      mooveX = 0;
+    } else if (mooveX > oeuvre.current.scrollLeftMax) {
+      mooveX = oeuvre.current.scrollLeftMax;
+    } else {
+      mooveX += e.nativeEvent.wheelDelta * -1;
     }
-  );
+    oeuvre.current.scrollTo(mooveX, 0);
+  };
 
   return (
-    <main className="oeuvres" ref={oeuvre}>
-      <HorizontalScroll>
-        <div
-          className="moove"
-          style={{
-            transform: `translate3d(${moove.x}, 0, 0)`,
-          }}
-        >
-          <ImagesGallery />
-        </div>
-      </HorizontalScroll>
+    <main className="oeuvres" ref={oeuvre} onWheel={ScrollHorizontal}>
+      <div>
+        <ImagesGallery />
+      </div>
     </main>
   );
 };

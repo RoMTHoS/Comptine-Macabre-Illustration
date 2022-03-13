@@ -35,6 +35,8 @@ $grey: #888;
 
 #root {
   height: 100vh;
+  scrollbar-width: none;
+  overflow-x: hidden;
   background: black;
   background-size: auto;
   color: $white;

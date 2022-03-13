@@ -1,28 +1,26 @@
 .oeuvres {
   grid-area: c;
-  @include verticalCenter;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  scrollbar-width: none;
 
-  @include media-max(750px) {
+  @include media-max(800px) {
     .images {
+      height: 85vh;
       flex-direction: column;
-      justify-content: space-around;
       flex-wrap: wrap;
+      justify-content: center;
       img {
-        width: 50vw;
-        height: fit-content;
-        margin: 0px 30px 0px 30px;
+        width: 40vw;
+        height: auto;
       }
     }
   }
 }
+
 .moove {
   display: flex;
-  background-color: red;
-}
-
-.scroll-horizontal {
-  display: flex;
-  background-color: black;
 }
 
 .images {

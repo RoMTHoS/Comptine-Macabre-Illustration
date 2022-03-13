@@ -8,6 +8,7 @@ const Image = ({ src }) => {
     {
       onDrag: ({ offset: [dx, dy] }) => {
         setCrop((crop) => ({ ...crop, x: dx, y: dy }));
+        console.log({ offset: [dx, dy] });
       },
 
       onPinch: ({ offset: [d] }) => {
@@ -22,11 +23,17 @@ const Image = ({ src }) => {
 
   const wheel = useWheel(({ offset: Array }) => {
     setCrop((crop) => ({ ...crop, scale: 1 + Array[1] / 1000 }));
+    console.log({ offset: Array });
   });
+
+  function onLoad() {
+    setCrop({ x: 0, y: 0, scale: 1 });
+  }
 
   return (
     <div className="image" {...wheel()}>
       <img
+        onLoad={onLoad}
         draggable="false"
         ref={imageRef}
         src={src}
