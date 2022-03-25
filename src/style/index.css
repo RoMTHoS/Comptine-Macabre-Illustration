@@ -446,6 +446,9 @@ Link {
   display: flex;
   flex-direction: row;
 }
+.form-new-content .image-box .image-upload-preview-container .image-preview .image {
+  width: 30vw;
+}
 .form-new-content .text-box {
   display: flex;
   flex-direction: column;
