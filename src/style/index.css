@@ -9,6 +9,7 @@
   text-decoration: none !important;
   letter-spacing: 2px;
   font-weight: 200;
+  scrollbar-width: none;
 }
 
 #root {
@@ -47,6 +48,10 @@ button:hover {
 
 Link {
   margin: 10px;
+}
+
+#root::-webkit-scrollbar {
+  display: none;
 }
 
 .header {
@@ -90,6 +95,7 @@ Link {
   font-size: 3em;
   grid-area: b;
   margin-left: 30px;
+  padding-right: 30px;
   writing-mode: vertical-rl;
   text-orientation: upright;
   cursor: pointer;
@@ -103,6 +109,10 @@ Link {
   .leftside {
     font-size: 1em;
   }
+}
+
+.leftside:hover {
+  color: #888;
 }
 
 .rightside {
@@ -114,6 +124,7 @@ Link {
   font-size: 3em;
   grid-area: d;
   margin-right: 30px;
+  padding-left: 30px;
   writing-mode: vertical-rl;
   text-orientation: upright;
   cursor: pointer;
@@ -129,6 +140,10 @@ Link {
   }
 }
 
+.rightside:hover {
+  color: #888;
+}
+
 .contact {
   display: flex;
   align-items: center;
@@ -137,6 +152,7 @@ Link {
   flex-direction: column;
   font-family: "Shalimar", cursive;
   font-size: 1.5em;
+  scrollbar-width: thin;
 }
 .contact .presentation {
   display: flex;
@@ -264,6 +280,8 @@ Link {
   display: flex;
   align-items: center;
   overflow-x: scroll;
+  overflow-y: none;
+  overflow: hidden;
   scrollbar-width: none;
 }
 @media screen and (max-width: 800px) {

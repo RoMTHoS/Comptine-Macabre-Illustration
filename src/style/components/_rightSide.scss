@@ -5,6 +5,7 @@
   font-size: 3em;
   grid-area: d;
   margin-right: 30px;
+  padding-left: 30px;
   writing-mode: vertical-rl;
   text-orientation: upright;
   cursor: pointer;
@@ -16,4 +17,8 @@
   @include media-max(600px) {
     font-size: 1em;
   }
+}
+
+.rightside:hover {
+  color: $grey;
 }

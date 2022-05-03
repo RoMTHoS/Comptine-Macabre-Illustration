@@ -31,6 +31,7 @@ $grey: #888;
   text-decoration: none !important;
   letter-spacing: 2px;
   font-weight: 200;
+  scrollbar-width: none;
 }
 
 #root {
@@ -81,4 +82,8 @@ button:hover {
 
 Link {
   margin: 10px;
+}
+
+#root::-webkit-scrollbar {
+  display: none;
 }
