@@ -7,7 +7,7 @@
   overflow: hidden;
   scrollbar-width: none;
 
-  @include media-max(800px) {
+  @include media-max(1000px) {
     .images {
       height: 85vh;
       flex-direction: column;
@@ -32,6 +32,7 @@
   img {
     height: 92%;
     max-width: 650px;
+    max-height: 513px;
     margin: 30px;
   }
 }

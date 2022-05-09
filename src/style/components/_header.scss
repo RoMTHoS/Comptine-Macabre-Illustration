@@ -5,7 +5,7 @@
   letter-spacing: 5px;
   font-size: 2em;
   grid-area: a;
-  margin: 10px;
+  margin-top: 50px;
 
   @include media-max(1000px) {
     font-size: 1em;

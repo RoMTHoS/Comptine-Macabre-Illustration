@@ -63,7 +63,7 @@ Link {
   letter-spacing: 5px;
   font-size: 2em;
   grid-area: a;
-  margin: 10px;
+  margin-top: 50px;
 }
 @media screen and (max-width: 1000px) {
   .header {
@@ -284,7 +284,7 @@ Link {
   overflow: hidden;
   scrollbar-width: none;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .oeuvres .images {
     height: 85vh;
     flex-direction: column;
@@ -308,6 +308,7 @@ Link {
 .images img {
   height: 92%;
   max-width: 650px;
+  max-height: 513px;
   margin: 30px;
 }
 
